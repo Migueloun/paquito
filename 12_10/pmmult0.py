@@ -14,6 +14,10 @@ if __name__ == "__main__":
     print(A)
     print(C)
     
+    jobs = []
+    for row in range(0, N):
+        p = Process()
+    
     """
     for row in range(0, len(A)):
         for col in range(0, N):
