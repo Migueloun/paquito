@@ -1,4 +1,5 @@
 import numpy as np
+from multiprocessing import shared_memory, Process
 
 if __name__ == "__main__":
     
@@ -6,7 +7,9 @@ if __name__ == "__main__":
     
     A = np.random.randn(N, N)
     B = np.identity(N)
-    C = np.zeros((N, N))
+    
+    ptr = shared_memory.SharedMemory(name='C', create=True, size=A.nbytes)
+    C = np.ndarray(B.shape, dtype=np.float64, buffer=ptr.buf)
     
     print(A)
     print(C)
