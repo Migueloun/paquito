@@ -2,7 +2,7 @@ import numpy as np
 
 if __name__ == "__main__":
     
-    N = 3
+    N = 256
     
     A = np.random.randn(N, N)
     B = np.identity(N)

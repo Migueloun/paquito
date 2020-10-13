@@ -3,20 +3,13 @@ from multiprocessing import shared_memory, Process
 
 def matrix_multiply(row):
     
-    global N
-    
-    global A
-    global B
-    global C
-    
-    
     for col in range(0, N, 1):
         for k in range(0, N, 1):
-            C[row][col] += 
+            C[row][col] += A[row][k]*B[k][col]
             
 if __name__ == "__main__":
     
-    N = 3
+    N = 512
     
     A = np.random.randn(N, N)
     B = np.identity(N)
@@ -29,7 +22,7 @@ if __name__ == "__main__":
     
     jobs = []
     for row in range(0, N):
-        p = Process(target=, args=())
+        p = Process(target=matrix_multiply, args=(row,))
         jobs.append(p)
         p.start()
         
