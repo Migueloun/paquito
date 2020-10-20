@@ -9,8 +9,8 @@ PROJECT	=	SMMULT
 
 # WRITE THE NAMES OF THE CUSTOM .h AND .o FILES CONTAINED IN
 # THE SRC AND INCLUDE DIRECTORIES
-_INCS	=	
-_OBJS	=	main.o
+_INCS	=	myLibrary.h
+_OBJS	=	main.o myLibrary.o
 
 SRCDIR	=	Libraries/src
 INCDIR	=	Libraries/include
